@@ -1,0 +1,5 @@
+name = Lib4RI DOI pubs
+description = ''
+core = 7.x
+dependencies[] = lib4ridora
+stylesheets[all][] = css/lib4ri_doi_pubs.css

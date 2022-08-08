@@ -1,0 +1,19 @@
+.buttonized_publish_link {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+  width: max-content;
+  padding: .0em;
+}
+
+.accepted-version-warning-hidden {
+	display: none !important;
+}
+
+.accepted-version-warning-on {
+	color: #cc0000;
+}
+
+.accepted-version-warning-off {
+	color: #248f24;
+}
