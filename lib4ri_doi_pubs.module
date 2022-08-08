@@ -72,7 +72,7 @@ function lib4ri_doi_pubs_block_view($delta) {
                 $query = array('id' => $object->id,
                     'destination' => current_path(),);
                 
-                $link = '<div class="buttonized_unstage_link">'.l('Unstage','islandora/object/'.$object->id.'/manage/object/unstage', array('query' => $query)).'</div>';
+                $link = '<div class="buttonized_doi_publish_link">'.l('Unstage','islandora/object/'.$object->id.'/manage/object/doimigrate', array('query' => $query)).'</div>';
                 $block['content'] .= $link;
             }
             break;
