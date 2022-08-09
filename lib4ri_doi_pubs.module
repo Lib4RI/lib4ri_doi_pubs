@@ -64,11 +64,11 @@ function lib4ri_doi_pubs_block_view($delta) {
             );
             break;
             
-        case 'lib4ri_staged_ingest':
+        case 'lib4ri_doi_pubs':
             $object = menu_get_object('islandora_object', 2);
             module_load_include('inc', 'lib4ri_staged_ingest', 'includes/utils');
             if (isstaged($object)){
-                $block['content'] = t('<font color="red"> This publication is staged </font>');
+                $block['content'] = t('<font color="red"> Unreleased DOI publication </font>');
                 $query = array('id' => $object->id,
                     'destination' => current_path(),);
                 
