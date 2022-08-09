@@ -88,7 +88,7 @@ function lib4ri_doi_pubs_block_view($delta) {
 function lib4ri_doi_pubs_theme($existing, $type, $theme, $path) {
     return array(
         'lib4ri_doi_pubs_citation_solr_results' => array(
-            'template' => 'theme/lib4ri-staged-ingest-citation-solr-results',
+            'template' => 'theme/lib4ri-doi-pubs-citation-solr-results',
             'variables' => array(
                 'citations' => NULL,
             ),
