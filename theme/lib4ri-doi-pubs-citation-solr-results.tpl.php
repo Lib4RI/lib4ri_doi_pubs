@@ -18,7 +18,7 @@
     <div class="lib4ridora-citation-solr-results-inner">
     <?php print $citation['citation']; ?>
     <div class="bib-detail-record">
-      <div><?php $cit_pid = $citation['pid']; print l(t("Detailed Record"), "islandora/object/$cit_pid"); ?>  <font color="red"><?php print $citation['staged'];?></font></div>
+      <div><?php $cit_pid = $citation['pid']; print l(t("Detailed Record"), "islandora/object/$cit_pid"); ?>  <font color="red"><?php print $citation['unreleased'];?></font></div>
     </div>
     <div class="bib-versions">
       <?php print $citation['pdf_listing']; ?>

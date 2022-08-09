@@ -34,7 +34,7 @@ function lib4ri_doi_pubs_migrate_form($form, &$form_state, $islandora_object) {
     );
     $form['submit'] = array(
         '#type' => 'submit',
-        '#value' => 'Unstage Object',
+        '#value' => 'Migrate Object',
     );
     $form_state['doi_object'] = $islandora_object->id;
     return $form;
