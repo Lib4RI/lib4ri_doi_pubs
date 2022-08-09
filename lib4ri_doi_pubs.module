@@ -67,16 +67,31 @@ function lib4ri_doi_pubs_block_view($delta) {
         case 'lib4ri_doi_pubs':
             $object = menu_get_object('islandora_object', 2);
             module_load_include('inc', 'lib4ri_staged_ingest', 'includes/utils');
-            if (isstaged($object)){
+            if (isDoiUnpublished($object)){
                 $block['content'] = t('<font color="red"> Unreleased DOI publication </font>');
                 $query = array('id' => $object->id,
                     'destination' => current_path(),);
                 
-                $link = '<div class="buttonized_doi_publish_link">'.l('Unstage','islandora/object/'.$object->id.'/manage/object/doimigrate', array('query' => $query)).'</div>';
+                $link = '<div class="buttonized_doi_publish_link">'.l('Release','islandora/object/'.$object->id.'/manage/object/doimigrate', array('query' => $query)).'</div>';
                 $block['content'] .= $link;
             }
             break;
             
     }
     return $block;
+}
+
+function isDoiUnpublished($object){
+    if (!isset($object)){
+        return FALSE;
+    }
+    
+    $staging_collection = variable_get('lib4ri_doi_pubs_doi_collection');
+    $parents = $object->getParents();
+    if (sizeof($parents) == 1){
+        if ($parents[0] == $staging_collection){
+            return TRUE;
+        }
+    }
+    return FALSE;
 }
