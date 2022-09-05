@@ -59,7 +59,7 @@ function lib4ri_doi_pubs_block_view($delta) {
             module_load_include('inc', 'lib4ridora', 'includes/block');
             $block['subject'] = t('Recent Additions');
             $block['content'] = array(
-                '#theme' => 'lib4ri-doi-pubs-citation-solr-results',
+                '#theme' => 'lib4ri_doi_pubs_citation_solr_results',
                 '#citations' => lib4ridora_get_recent_additions(),
             );
             break;
