@@ -82,6 +82,19 @@ function lib4ri_doi_pubs_block_view($delta) {
 }
 
 /**
+ * Implements hook_block_configure().
+ */
+function lib4ri_doi_pubs_block_configure($delta) {
+    switch ($delta) {
+        case 'lib4ridora_recent_additions':
+            module_load_include('inc', 'lib4ridora', 'includes/block');
+            return lib4ridora_recent_additions_block_configuration_form();
+            
+        default:
+            break;
+    }
+}
+/**
  * Implements hook_theme().
  *
  */
