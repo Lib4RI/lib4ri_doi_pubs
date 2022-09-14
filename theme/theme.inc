@@ -15,7 +15,7 @@ function template_preprocess_lib4ri_doi_pubs_citation_solr_results(&$variables) 
     template_preprocess_lib4ridora_citation_solr_results($variables);
     foreach ($variables['citations'] as &$citation) {
         if (isDoiUnpublished($citation['pdf_listing']['#object'])){
-            $citation['unreleased'] = 'Unrelease DOI publication';
+            $citation['unreleased'] = 'Unreleased DOI publication';
         }
         else{
             $citation['unreleased'] = null;
